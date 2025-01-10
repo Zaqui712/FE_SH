@@ -20,7 +20,7 @@ const Services = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/services/all");
+        const response = await fetch("http://4.211.87.132:5000/api/services/all");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -84,8 +84,8 @@ const Services = () => {
 
     try {
       const endpoint = editingService
-        ? `http://localhost:5000/api/services/servico/${editingService.servicoID}`
-        : "http://localhost:5000/api/services/add";
+        ? `http://4.211.87.132:5000/api/services/servico/${editingService.servicoID}`
+        : "http://4.211.87.132:5000/api/services/add";
       const method = editingService ? "PUT" : "POST";
 
       const response = await fetch(endpoint, {
@@ -121,7 +121,7 @@ const Services = () => {
   const handleDeleteClick = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/services/servico/${id}`,
+        `http://4.211.87.132:5000/api/services/servico/${id}`,
         { method: "DELETE" }
       );
       if (response.ok) {

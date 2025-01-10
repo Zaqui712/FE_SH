@@ -9,7 +9,7 @@ const Encomendas = () => {
   useEffect(() => {
     const fetchEncomendas = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/orders/all');
+        const response = await fetch('http://4.211.87.132:5000/api/orders/all');
         if (!response.ok) {
           throw new Error('Failed to fetch encomendas');
         }

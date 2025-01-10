@@ -11,7 +11,7 @@ const ServiceDetails = () => {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/services/servicessearch');
+        const response = await fetch('http://4.211.87.132:5000/api/services/servicessearch');
         if (!response.ok) {
           throw new Error('Failed to fetch services data');
         }

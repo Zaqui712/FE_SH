@@ -13,7 +13,7 @@ const Alerts = () => {
     const fetchData = async () => {
       try {
         // Fetch medications data
-        const response = await fetch("http://localhost:5000/api/notifications");
+        const response = await fetch("http://4.211.87.132:5000/api/notifications");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
@@ -25,7 +25,7 @@ const Alerts = () => {
         setRequests(data.requests || []);
 
         // Fetch services data (this is just an example URL)
-        const serviceResponse = await fetch("http://localhost:5000/api/services/all");
+        const serviceResponse = await fetch("http://4.211.87.132:5000/api/services/all");
         if (!serviceResponse.ok) {
           throw new Error("Failed to fetch services");
         }

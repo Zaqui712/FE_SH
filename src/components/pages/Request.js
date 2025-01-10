@@ -32,7 +32,7 @@ const Request = () => {
     const fetchRequisicoes = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/requests/all"
+          "http://4.211.87.132:5000/api/requests/all"
         );
         if (!response.ok) throw new Error("Failed to fetch requisicoes");
         const data = await response.json();
@@ -45,7 +45,7 @@ const Request = () => {
     const fetchMedicamentos = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/products/all"
+          "http://4.211.87.132:5000/api/products/all"
         );
         if (!response.ok) throw new Error("Failed to fetch medicamentos");
         const data = await response.json();
@@ -58,7 +58,7 @@ const Request = () => {
     const fetchServicos = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/services/all"
+          "http://4.211.87.132:5000/api/services/all"
         );
         if (!response.ok)
           throw new Error("Failed to fetch serviços hospitalares");
@@ -82,7 +82,7 @@ const Request = () => {
         if (!medicamentoID) return; // Avoid fetching if medicamentoID is missing
 
         const response = await fetch(
-          `http://localhost:5000/api/requests/${medicamentoID}/servicos`
+          `http://4.211.87.132:5000/api/requests/${medicamentoID}/servicos`
         );
 
         if (!response.ok) {
@@ -149,7 +149,7 @@ const Request = () => {
       delete payload.servicoID;
   
       const response = await fetch(
-        "http://localhost:5000/api/requests/create",
+        "http://4.211.87.132:5000/api/requests/create",
         {
           method: "POST",
           headers: {
@@ -177,7 +177,7 @@ const Request = () => {
   const approveRequest = async (requisicaoID) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/requests/approve/${requisicaoID}`,
+        `http://4.211.87.132:5000/api/requests/approve/${requisicaoID}`,
         {
           method: "PUT",
           headers: {
@@ -202,7 +202,7 @@ const Request = () => {
   const cancelRequest = async (requisicaoID) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/requests/cancel/${requisicaoID}`,
+        `http://4.211.87.132:5000/api/requests/cancel/${requisicaoID}`,
         {
           method: "PUT",
           headers: {

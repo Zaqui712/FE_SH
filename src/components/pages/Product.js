@@ -32,7 +32,7 @@ const Product = () => {
 
     const fetchMedicamentos = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/products/all');
+        const response = await fetch('http://4.211.87.132:5000/api/products/all');
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
@@ -66,7 +66,7 @@ const Product = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/api/products/new', {
+      const response = await fetch('http://4.211.87.132:5000/api/products/new', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
