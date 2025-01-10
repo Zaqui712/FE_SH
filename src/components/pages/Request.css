@@ -1,23 +1,221 @@
-/* src/components/pages/Request.css */
-.request-container {
-  padding: 20px;
+/* Ensure the content takes up space to the right of the sidebar */
+.requests-page {
+  margin-left: 11em;
+  padding: 1em;
   background-color: #f8f8f8;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
-h2 {
-  font-size: 1.5em;
+.requests-content {
+  padding-top: 9em;
+  margin-left: 1em;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+/* Modal Overlay for Form */
+.modal-overlay-request {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-li {
-  margin-bottom: 20px;
+/* Modal Form */
+/* Modal Form */
+.modal-request {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  width: 35%;
+  max-width: 500px;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left; /* Aligns form content to the left */
 }
 
-hr {
+/* Form Fields - Each in One Column */
+.request-form-request {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Spacing between fields */
+}
+
+.request-form-request label {
+  font-size: 1rem;
+  color: #333333;
+  font-weight: 500;
+}
+
+.request-form-request input,
+.request-form-request select {
+  padding: 0.9em 1em;
   border: 1px solid #ddd;
-  margin-top: 10px;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%; /* Full width of the container */
+}
+
+.request-form-request input:focus,
+.request-form-request select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons Centered and Side by Side */
+.request-form-request-buttons {
+  display: flex;
+  justify-content: center; /* Centers the buttons */
+  gap: 1rem; /* Spacing between buttons */
+  margin-top: 1rem;
+}
+
+.request-form-request button {
+  padding: 0.9em 1.5em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.request-form-request button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.request-form-request button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.request-form-request button[type="cancel"] {
+  background-color: #f44336;
+  color: white;
+}
+
+.request-form-request button[type="cancel"]:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .modal-request {
+    width: 90%;
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .request-form-request input,
+  .request-form-request select,
+  .request-form-request button {
+    font-size: 0.9rem;
+  }
+
+  .request-form-request-buttons {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+  }
+}
+
+/* Cancel Button */
+button[type="cancel"] {
+  background-color: #f44336;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button[type="cancel"]:hover {
+  background-color: #d32f2f;
+}
+
+/* Modal Title */
+.modal-request h2 {
+  font-size: 1.5rem;
+  color: #333333; /* Neutral color for title */
+  margin-bottom: 1rem;
+}
+
+/* Medication Form Section */
+.medicamento-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Spaced elements */
+}
+
+.medicamento-form select,
+.medicamento-form input {
+  width: 100%;
+}
+
+/* Table Container */
+.requests-table-container {
+  width: 107em;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Header */
+.requests-table-header {
+  display: flex;
+  background-color: #d3d3d3;
+  font-weight: bold;
+  padding: 0.3em
+}
+
+/* Table Rows */
+.requests-table-row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.requests-table-row:nth-child(even) {
+  background-color: #f9f9f9; /* Alternate row color */
+
+}
+
+.requests-table-row:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .requests-table-header {
+    font-size: 0.8em;
+    padding: 0.3em;
+  }
+
+  .requests-table-row {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .column {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .column::before {
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .request-form-request input,
+  .request-form-request button {
+    font-size: 0.9rem;
+  }
 }
